@@ -60,7 +60,7 @@ void * thread_work(void * arg) {
 }
 
 int main(int argc, char * argv[]) {
-    long t1_c = 0, t2_c = 0; // to record numbers of times printed by T1 and T2
+    long *t1_c = 0, *t2_c = 0; // to record numbers of times printed by T1 and T2
 
     if (argc < 3) {
         printf("There must be 2 arguments following the binary!\n");
@@ -82,7 +82,7 @@ int main(int argc, char * argv[]) {
     pthread_join(t1, (void *)&t1_c);
     pthread_join(t2, (void *)&t2_c);
     
-    printf("In main thread: T1 printed %ld times. T2 printed %ld times.\n", t1_c, t2_c);
+    printf("In main thread: T1 printed %ld times. T2 printed %ld times.\n", (long)t1_c, (long)t2_c);
 
     pthread_mutex_destroy(&lock);
     
