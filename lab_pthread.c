@@ -43,8 +43,8 @@ void * thread_work(void * arg) {
 		    printf("T1: %s\n", buffer);
 	    } else {
 		    printf("T2: ");
-		    int len = strlen(buffer);
-		    for (int i = len - 1; i >= 0; i--) {
+		    int length = strlen(buffer);
+		    for (int i = length - 1; i >= 0; i--) {
 			    printf("%c", buffer[i]);
 		    }
 		    printf("\n");
